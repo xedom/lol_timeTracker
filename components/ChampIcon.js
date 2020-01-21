@@ -1,0 +1,30 @@
+import React, { Component } from 'react';
+import { StyleSheet, Text, View, Image } from 'react-native';
+
+const laneIcons = {
+  TOP: 'https://raw.githubusercontent.com/esports-bits/lol_images/master/role_lane_icons/TOP.png',
+  JUNGLE: 'https://raw.githubusercontent.com/esports-bits/lol_images/master/role_lane_icons/JUNGLE.png',
+  MIDDLE: 'https://raw.githubusercontent.com/esports-bits/lol_images/master/role_lane_icons/MIDDLE.png',
+  SUPPORT: 'https://raw.githubusercontent.com/esports-bits/lol_images/master/role_lane_icons/SUPPORT.png',
+  ADC: 'https://raw.githubusercontent.com/esports-bits/lol_images/master/role_lane_icons/ADC.png',
+}
+
+function ChampIcon({ img }) {
+  return (
+    <View style={styles.champIcon}>
+      <Image
+        style={{width: 50, height: 50}}
+        source={{uri: laneIcons[img]}}
+      />
+    </View>
+  )
+}
+
+const styles = StyleSheet.create({
+  champIcon: {
+    flex: 1,
+    backgroundColor: '#222',
+  },
+});
+
+export default ChampIcon

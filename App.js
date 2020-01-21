@@ -1,19 +1,25 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from 'react';
+import { StyleSheet, Text, View, Image } from 'react-native';
+import ChampBox from './components/ChampBox.js';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
-  );
+export default class App extends Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <View style={{flex: .5}}></View>
+        <ChampBox role="TOP" />
+        <ChampBox role="JUNGLE" />
+        <ChampBox role="MIDDLE" />
+        <ChampBox role="SUPPORT" />
+        <ChampBox role="ADC" />
+      </View>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#222',
   },
 });
