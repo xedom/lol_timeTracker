@@ -6,7 +6,7 @@ import Timer from './Timer';
 function ChampTimers() {
   return (
     <View style={styles.champTimers}>
-      <Timer time="--:--" />
+      <Timer time="00:00" />
       <Timer time="--:--" />
     </View>
   )
@@ -14,8 +14,9 @@ function ChampTimers() {
 
 const styles = StyleSheet.create({
   champTimers: {
-    flex: 1,
-    backgroundColor: '#eee',
+    flex: 5,
+    backgroundColor: '#be2',
+    
   },
 });
 

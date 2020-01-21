@@ -13,7 +13,7 @@ function ChampIcon({ img }) {
   return (
     <View style={styles.champIcon}>
       <Image
-        style={{width: 50, height: 50}}
+        style={styles.im}
         source={{uri: laneIcons[img]}}
       />
     </View>
@@ -24,7 +24,14 @@ const styles = StyleSheet.create({
   champIcon: {
     flex: 1,
     backgroundColor: '#222',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
+  im : {
+    width: 60,
+    height: 60,
+  }
 });
 
 export default ChampIcon
