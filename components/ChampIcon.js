@@ -23,7 +23,7 @@ function ChampIcon({ img }) {
 const styles = StyleSheet.create({
   champIcon: {
     flex: 1,
-    backgroundColor: '#222',
+    backgroundColor: '#111',
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',

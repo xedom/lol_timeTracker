@@ -17,7 +17,10 @@ const styles = StyleSheet.create({
   champBox: {
     flex: 1,
     flexDirection: 'row',
-    backgroundColor: '#222',
+    backgroundColor: '#111',
+    margin: 2,
+    borderRadius: 22,
+    overflow: 'hidden'
   },
 });
 

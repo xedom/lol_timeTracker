@@ -15,8 +15,6 @@ function ChampTimers() {
 const styles = StyleSheet.create({
   champTimers: {
     flex: 5,
-    backgroundColor: '#be2',
-    
   },
 });
 

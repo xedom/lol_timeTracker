@@ -13,12 +13,14 @@ function Timer({ time }) {
 const styles = StyleSheet.create({
   time: {
     flex: 1,
-    backgroundColor: '#eee',
+    backgroundColor: '#202020',
     justifyContent: 'center',
     alignItems: 'center',
+    margin: 1,
   },
   counter: {
     fontSize: 40,
+    color: '#eee'
   }
 });
 
