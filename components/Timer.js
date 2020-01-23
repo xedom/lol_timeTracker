@@ -16,7 +16,7 @@ class Timer extends Component {
 
   onClick() {
     if (this.state.running) {
-      clearInterval(this.step)
+      clearInterval(this.state.step)
       this.setState({
         running: false,
         counter: 0,
@@ -30,8 +30,6 @@ class Timer extends Component {
         }, 1000)
       })
     }
-
-    console.log(this.state)
   }
 
   render() {
