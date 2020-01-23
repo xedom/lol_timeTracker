@@ -6,8 +6,8 @@ import Timer from './Timer';
 function ChampTimers() {
   return (
     <View style={styles.champTimers}>
-      <Timer time="00:00" />
-      <Timer time="--:--" />
+      <Timer/>
+      <Timer/>
     </View>
   )
 }

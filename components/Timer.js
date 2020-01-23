@@ -1,13 +1,46 @@
-import React, { Component } from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import React, { Component, useState } from 'react';
+import { StyleSheet, Text, View, TouchableHighlight } from 'react-native';
 
 
-function Timer({ time }) {
+class Timer extends Component {
+  constructor(promps) {
+    super(promps)
+
+    this.state = {
+      counter: 0,
+      running: false,
+      step: null,
+    }
+
+  }
+
+  onClick() {
+    if (this.state.running) {
+      clearInterval(this.step)
+      this.setState({
+        running: false,
+        counter: 0,
+        step: null
+      })
+    } else {
+      this.setState({
+        running: true,
+        step: setInterval(() => {
+          this.setState(prev => ({counter: prev.counter + 1}))
+        }, 1000)
+      })
+    }
+
+    console.log(this.state)
+  }
+
+  render() {
     return (
-      <View style={styles.time}>
-        <Text style={styles.counter}>{time}</Text>
-      </View>
+      <TouchableHighlight style={styles.time} onPress={this.onClick.bind(this)}>
+        <Text style={styles.counter}>{this.state.counter}</Text>
+      </TouchableHighlight>
     )
+  }
 }
 
 const styles = StyleSheet.create({
