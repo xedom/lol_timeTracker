@@ -1,0 +1,22 @@
+{
+    "heal" : {
+        "cooldown" : 240,
+        "img" : "heal.jpg"
+    },
+    "ghost" : {
+        "cooldown" : 180,
+        "img" : "ghost.jpg"
+    },
+    "exhaust" : {
+        "cooldown" : 210,
+        "img" : "exhaust.jpg"
+    },
+    "flash" : {
+        "cooldown" : 300,
+        "img" : "flash.jpg"
+    },
+    "teleport" : {
+        "cooldown" : 360,
+        "img" : "teleport.jpg"
+    }
+}
