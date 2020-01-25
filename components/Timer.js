@@ -7,26 +7,34 @@ class Timer extends Component {
     super(promps)
 
     this.state = {
-      counter: 300,
+      counter: 15,
       running: false,
       step: null,
     }
 
   }
 
+  resetTimer() {
+    clearInterval(this.state.step);
+    this.setState({
+      running: false,
+      counter: 15,
+      step: null
+    });
+  }
+
   onClick() {
     if (this.state.running) {
-      clearInterval(this.state.step)
-      this.setState({
-        running: false,
-        counter: 300,
-        step: null
-      })
+      this.resetTimer()
     } else {
       this.setState({
         running: true,
         step: setInterval(() => {
-          this.setState(prev => ({counter: prev.counter - 1}))
+          if (this.state.counter > 0) {
+            this.setState(prev => ({counter: prev.counter - 1}))
+          } else {
+            this.resetTimer()
+          }
         }, 1000)
       })
     }
