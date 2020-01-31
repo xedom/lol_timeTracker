@@ -7,11 +7,11 @@ export default class App extends Component {
     return (
       <View style={styles.container}>
         <View style={{flex: .5}}></View>
-        <ChampBox role="TOP" />
-        <ChampBox role="JUNGLE" />
-        <ChampBox role="MIDDLE" />
-        <ChampBox role="SUPPORT" />
-        <ChampBox role="ADC" />
+        <ChampBox role="top" />
+        <ChampBox role="jungle" />
+        <ChampBox role="middle" />
+        <ChampBox role="support" />
+        <ChampBox role="adc" />
       </View>
     );
   }
