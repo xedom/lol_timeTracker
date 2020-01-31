@@ -1,6 +1,14 @@
 import React, { Component, useState } from 'react';
-import { StyleSheet, Text, View, TouchableHighlight } from 'react-native';
+import { StyleSheet, Text, View, TouchableHighlight, Image } from 'react-native';
 import parseTime from '../utils/parseTime'
+
+// const spellIcons = {
+//   exhaust: require('../assets/spells/exhaust.jpg'),
+//   flash: require('../assets/spells/flash.jpg'),
+//   ghost: require('../assets/spells/ghost.jpg'),
+//   heal: require('../assets/spells/heal.jpg'),
+//   teleport: require('../assets/spells/teleport.jpg'),
+// }
 
 class Timer extends Component {
   constructor(promps) {
@@ -42,9 +50,12 @@ class Timer extends Component {
 
   render() {
     return (
-      <TouchableHighlight style={styles.time} onPress={this.onClick.bind(this)}>
-        <Text style={styles.counter}>{parseTime(this.state.counter)}</Text>
-      </TouchableHighlight>
+      <View style={styles.time} >
+        <Image style={styles.im} source={require('../assets/spells/flash.jpg')} />
+        <TouchableHighlight style={styles.button} onPress={this.onClick.bind(this)}>
+          <Text style={styles.counter}>{parseTime(this.state.counter)}</Text>
+        </TouchableHighlight>
+      </View>
     )
   }
 }
@@ -53,13 +64,22 @@ const styles = StyleSheet.create({
   time: {
     flex: 1,
     backgroundColor: '#202020',
-    justifyContent: 'center',
+    // justifyContent: 'space-around',
     alignItems: 'center',
     margin: 1,
+    flexDirection: 'row'
   },
   counter: {
     fontSize: 40,
     color: '#eee'
+  },
+  im: {
+    width: 60,
+    height: 60,
+    marginHorizontal: 10
+  },
+  button: {
+    flex: 1,
   }
 });
 
