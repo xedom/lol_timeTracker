@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
 import ChampBox from './components/ChampBox.js';
 
 
@@ -8,11 +8,11 @@ export default class App extends Component {
     super(promps)
     this.state = {
       champ: [
-        { id: 1, lane: 'top', spells: [ 'flash', 'teleport' ] },
-        { id: 2, lane: 'jungle', spells: [ 'flash', 'smite' ] },
-        { id: 3, lane: 'middle', spells: [ 'flash', 'ignite' ] },
-        { id: 4, lane: 'support', spells: [ 'flash', 'exhaust' ] },
-        { id: 5, lane: 'adc', spells: [ 'flash', 'heal' ] },
+        { id: 1, lane: 'top', spells: [ 'teleport', 'flash', ] },
+        { id: 2, lane: 'jungle', spells: [ 'smite', 'flash', ] },
+        { id: 3, lane: 'middle', spells: [ 'ignite', 'flash', ] },
+        { id: 4, lane: 'support', spells: [ 'exhaust', 'flash', ] },
+        { id: 5, lane: 'adc', spells: [ 'heal', 'flash', ] },
       ]
     };
   }
@@ -20,12 +20,12 @@ export default class App extends Component {
   render() {
     const champ = this.state.champ.map(champ => <ChampBox key={champ.id} role={champ.lane} spells={champ.spells} />)
     return (
-      <View style={styles.container}>
+      <SafeAreaView style={styles.container}>
         <View style={styles.titleContainer}>
           <Text style={styles.title}>LOL Time Tracker</Text>
         </View>
         {champ}
-      </View>
+      </SafeAreaView>
     );
   }
 }
@@ -37,12 +37,12 @@ const styles = StyleSheet.create({
   },
   titleContainer: {
     flex: .5,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   title: {
     fontSize: 40,
-    fontWeight: "bold",
+    fontWeight: 'bold',
     color: '#eee',
   },
 });

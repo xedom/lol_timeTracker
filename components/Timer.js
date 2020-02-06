@@ -22,6 +22,7 @@ class Timer extends Component {
       running: false,
       step: null,
       spell: promps.spell,
+      displayed: '- - : - -',
     }
 
   }
@@ -33,6 +34,7 @@ class Timer extends Component {
       counter: 15,
       step: null
     });
+    this.setState({displayed: '--:--'})
   }
 
   onClick() {
@@ -44,6 +46,7 @@ class Timer extends Component {
         step: setInterval(() => {
           if (this.state.counter > 0) {
             this.setState(prev => ({counter: prev.counter - 1}))
+            this.setState({displayed: parseTime(this.state.counter)})
           } else {
             this.resetTimer()
           }
@@ -57,7 +60,7 @@ class Timer extends Component {
       <View style={styles.time} >
         <Image style={styles.im} source={spellIcons[this.state.spell].img} />
         <TouchableHighlight style={styles.button} onPress={this.onClick.bind(this)}>
-          <Text style={styles.counter}>{parseTime(this.state.counter)}</Text>
+          <Text style={styles.counter}>{this.state.displayed}</Text>
         </TouchableHighlight>
       </View>
     )
