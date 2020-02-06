@@ -34,7 +34,7 @@ class Timer extends Component {
       counter: 15,
       step: null
     });
-    this.setState({displayed: '--:--'})
+    this.setState({displayed: '- - : - -'})
   }
 
   onClick() {
