@@ -1,6 +1,7 @@
 import React, { Component, useState } from 'react';
-import { StyleSheet, Text, View, TouchableHighlight, Image } from 'react-native';
-import parseTime from '../utils/parseTime'
+import { StyleSheet, Text, View, TouchableHighlight, Image, Vibration } from 'react-native';
+import parseTime from '../utils/parseTime';
+import SoundPlayer from 'react-native-sound-player';
 
 const spellIcons = {
   heal: { img: require('../assets/spells/heal.jpg'), countdown: 240 },
@@ -28,6 +29,8 @@ class Timer extends Component {
   }
 
   resetTimer() {
+    Vibration.vibrate(2000);
+    SoundPlayer.playUrl('https://octafox.it/test/alarm1.mp3') // https://octafox.it/test/alarm1.mp3
     clearInterval(this.state.step);
     this.setState({
       running: false,
@@ -38,6 +41,7 @@ class Timer extends Component {
   }
 
   onClick() {
+    Vibration.vibrate(200);
     if (this.state.running) {
       this.resetTimer()
     } else {
