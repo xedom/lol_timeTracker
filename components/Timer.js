@@ -3,14 +3,14 @@ import { StyleSheet, Text, View, TouchableHighlight, Image } from 'react-native'
 import parseTime from '../utils/parseTime'
 
 const spellIcons = {
-  heal: require('../assets/spells/heal.jpg'),
-  smite: require('../assets/spells/smite.jpg'),
-  flash: require('../assets/spells/flash.jpg'),
-  ghost: require('../assets/spells/ghost.jpg'),
-  ignite: require('../assets/spells/ignite.jpg'),
-  exhaust: require('../assets/spells/exhaust.jpg'),
-  barrier: require('../assets/spells/barrier.jpg'),
-  teleport: require('../assets/spells/teleport.jpg'),
+  heal: { img: require('../assets/spells/heal.jpg'), countdown: 240 },
+  smite: { img: require('../assets/spells/smite.jpg'), countdown: 15 },
+  flash: { img: require('../assets/spells/flash.jpg'), countdown: 300 },
+  ghost: { img: require('../assets/spells/ghost.jpg'), countdown: 180 },
+  ignite: { img: require('../assets/spells/ignite.jpg'), countdown: 180 },
+  exhaust: { img: require('../assets/spells/exhaust.jpg'), countdown: 210 },
+  barrier: { img: require('../assets/spells/barrier.jpg'), countdown: 180 },
+  teleport: { img: require('../assets/spells/teleport.jpg'), countdown: 360 },
 }
 
 class Timer extends Component {
@@ -18,10 +18,10 @@ class Timer extends Component {
     super(promps)
 
     this.state = {
-      counter: 15,
+      counter: spellIcons[promps.spell].countdown,
       running: false,
       step: null,
-      spell: promps.spell
+      spell: promps.spell,
     }
 
   }
@@ -55,7 +55,7 @@ class Timer extends Component {
   render() {
     return (
       <View style={styles.time} >
-        <Image style={styles.im} source={spellIcons[this.state.spell]} />
+        <Image style={styles.im} source={spellIcons[this.state.spell].img} />
         <TouchableHighlight style={styles.button} onPress={this.onClick.bind(this)}>
           <Text style={styles.counter}>{parseTime(this.state.counter)}</Text>
         </TouchableHighlight>

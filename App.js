@@ -21,7 +21,9 @@ export default class App extends Component {
     const champ = this.state.champ.map(champ => <ChampBox key={champ.id} role={champ.lane} spells={champ.spells} />)
     return (
       <View style={styles.container}>
-        <View style={{flex: .5}}></View>
+        <View style={styles.titleContainer}>
+          <Text style={styles.title}>LOL Time Tracker</Text>
+        </View>
         {champ}
       </View>
     );
@@ -31,6 +33,16 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#eee',
+    backgroundColor: '#000',
+  },
+  titleContainer: {
+    flex: .5,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  title: {
+    fontSize: 40,
+    fontWeight: "bold",
+    color: '#eee',
   },
 });
