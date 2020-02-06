@@ -2,13 +2,16 @@ import React, { Component, useState } from 'react';
 import { StyleSheet, Text, View, TouchableHighlight, Image } from 'react-native';
 import parseTime from '../utils/parseTime'
 
-// const spellIcons = {
-//   exhaust: require('../assets/spells/exhaust.jpg'),
-//   flash: require('../assets/spells/flash.jpg'),
-//   ghost: require('../assets/spells/ghost.jpg'),
-//   heal: require('../assets/spells/heal.jpg'),
-//   teleport: require('../assets/spells/teleport.jpg'),
-// }
+const spellIcons = {
+  heal: require('../assets/spells/heal.jpg'),
+  smite: require('../assets/spells/smite.jpg'),
+  flash: require('../assets/spells/flash.jpg'),
+  ghost: require('../assets/spells/ghost.jpg'),
+  ignite: require('../assets/spells/ignite.jpg'),
+  exhaust: require('../assets/spells/exhaust.jpg'),
+  barrier: require('../assets/spells/barrier.jpg'),
+  teleport: require('../assets/spells/teleport.jpg'),
+}
 
 class Timer extends Component {
   constructor(promps) {
@@ -18,6 +21,7 @@ class Timer extends Component {
       counter: 15,
       running: false,
       step: null,
+      spell: promps.spell
     }
 
   }
@@ -51,7 +55,7 @@ class Timer extends Component {
   render() {
     return (
       <View style={styles.time} >
-        <Image style={styles.im} source={require('../assets/spells/flash.jpg')} />
+        <Image style={styles.im} source={spellIcons[this.state.spell]} />
         <TouchableHighlight style={styles.button} onPress={this.onClick.bind(this)}>
           <Text style={styles.counter}>{parseTime(this.state.counter)}</Text>
         </TouchableHighlight>
@@ -80,6 +84,7 @@ const styles = StyleSheet.create({
   },
   button: {
     flex: 1,
+    alignItems: 'center'
   }
 });
 

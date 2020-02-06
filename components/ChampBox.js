@@ -4,11 +4,11 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 import ChampIcon from './ChampIcon';
 import ChampTimers from './ChampTimers';
 
-function ChampBox({ role }) {
+function ChampBox({ role, spells }) {
   return (
     <View style={styles.champBox}>
       <ChampIcon img={role} />
-      <ChampTimers />
+      <ChampTimers spells={spells} />
     </View>
   )
 }
