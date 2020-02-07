@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "lol_time_tracker",
-    "slug": "lol_time_tracker",
+    "name": "LOL Time Tracker",
+    "slug": "lol-time-tracker",
     "privacy": "public",
     "sdkVersion": "36.0.0",
     "platforms": [
@@ -25,6 +25,8 @@
     ],
     "ios": {
       "supportsTablet": true
-    }
+    },
+    "description": "simple lol time tracker",
+    "githubUrl": "https://github.com/xedom/lol_time_tracker"
   }
 }
