@@ -32,7 +32,7 @@ class Timer extends Component {
     clearInterval(this.state.step);
     this.setState({
       running: false,
-      counter: 15,
+      counter: this.state.counter,
       step: null
     });
     this.setState({displayed: '- - : - -'})
