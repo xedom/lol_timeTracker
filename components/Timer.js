@@ -40,7 +40,7 @@ class Timer extends Component {
   }
 
   onClick() {
-    Vibration.vibrate(200);
+    // Vibration.vibrate(200);
     if (this.state.running) {
       this.resetTimer()
     } else {
