@@ -18,6 +18,7 @@ class Timer extends Component {
     super(promps)
 
     this.state = {
+      spellCounter: spellIcons[promps.spell].countdown,
       counter: spellIcons[promps.spell].countdown,
       running: false,
       step: null,
@@ -28,11 +29,11 @@ class Timer extends Component {
   }
 
   resetTimer() {
-    Vibration.vibrate(2000);
+    Vibration.vibrate(1000);
     clearInterval(this.state.step);
     this.setState({
       running: false,
-      counter: this.state.counter,
+      counter: this.state.spellCounter,
       step: null
     });
     this.setState({displayed: '- - : - -'})

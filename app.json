@@ -24,7 +24,13 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.kor.loltimetracker",
+      "buildNumber": "1.0.0"
+    },
+    "android": {
+      "package": "com.kor.loltimetracker",
+      "versionCode": 1
     },
     "description": "simple lol time tracker",
     "githubUrl": "https://github.com/xedom/lol_time_tracker"
