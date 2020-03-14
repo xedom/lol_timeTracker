@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
 
 const laneIcons = {
-  top: require('../assets/lanes/top.png'),
-  jungle: require('../assets/lanes/jungle.png'),
-  middle: require('../assets/lanes/middle.png'),
-  support: require('../assets/lanes/support.png'),
-  adc: require('../assets/lanes/adc.png'),
+  top: require('../assets/lanes/TOP.png'),
+  jungle: require('../assets/lanes/JUNGLE.png'),
+  middle: require('../assets/lanes/MIDDLE.png'),
+  support: require('../assets/lanes/SUPPORT.png'),
+  adc: require('../assets/lanes/ADC.png'),
 }
 
 function ChampIcon({ img }) {

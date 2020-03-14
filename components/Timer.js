@@ -16,7 +16,6 @@ const spellIcons = {
 class Timer extends Component {
   constructor(promps) {
     super(promps)
-
     this.state = {
       spellCounter: spellIcons[promps.spell].countdown,
       counter: spellIcons[promps.spell].countdown,
@@ -25,7 +24,6 @@ class Timer extends Component {
       spell: promps.spell,
       displayed: '- - : - -',
     }
-
   }
 
   resetTimer() {
@@ -58,12 +56,33 @@ class Timer extends Component {
     }
   }
 
+  decrease() {
+    if (this.state.running) {
+      this.setState(prev => ({ counter: prev.counter - 5 }))
+      this.setState({displayed: parseTime(this.state.counter)})
+    }
+  }
+
+  increase() {
+    if (this.state.running) {
+      this.setState(prev => ({ counter: prev.counter + 5 }))
+      this.setState({displayed: parseTime(this.state.counter)})
+    }
+  }
+
+
   render() {
     return (
       <View style={styles.time} >
         <Image style={styles.im} source={spellIcons[this.state.spell].img} />
-        <TouchableHighlight style={styles.button} onPress={this.onClick.bind(this)}>
+        <TouchableHighlight style={styles.btn2} onPress={this.decrease.bind(this)}>
+          <Text style={styles.txtd}>-5</Text>
+        </TouchableHighlight>
+        <TouchableHighlight style={styles.btn} onPress={this.onClick.bind(this)}>
           <Text style={styles.counter}>{this.state.displayed}</Text>
+        </TouchableHighlight>
+        <TouchableHighlight style={styles.btn2} onPress={this.increase.bind(this)}>
+          <Text style={styles.txti}>+5</Text>
         </TouchableHighlight>
       </View>
     )
@@ -83,14 +102,31 @@ const styles = StyleSheet.create({
     fontSize: 40,
     color: '#eee'
   },
+  txti: {
+    fontSize: 20,
+    color: '#12ff1e'
+  },
+  txtd: {
+    fontSize: 20,
+    color: '#ff5512'
+  },
   im: {
     width: 60,
     height: 60,
     marginHorizontal: 10
   },
-  button: {
+  btn: {
+    flex: 2,
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: 60
+  },
+  btn2: {
     flex: 1,
-    alignItems: 'center'
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: 60,
+    borderRadius: 60
   }
 });
 
