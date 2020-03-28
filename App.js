@@ -10,9 +10,9 @@ export default class App extends Component {
       champ: [
         { id: 1, lane: 'top', spells: [ 'teleport', 'flash', ] },
         { id: 2, lane: 'jungle', spells: [ 'smite', 'flash', ] },
-        { id: 3, lane: 'middle', spells: [ 'ignite', 'flash', ] },
-        { id: 4, lane: 'support', spells: [ 'exhaust', 'flash', ] },
-        { id: 5, lane: 'adc', spells: [ 'heal', 'flash', ] },
+        { id: 3, lane: 'middle', spells: [ 'teleport', 'flash', ] },
+        { id: 4, lane: 'adc', spells: [ 'heal', 'flash', ] },
+        { id: 5, lane: 'support', spells: [ 'exhaust', 'flash', ] },
       ]
     };
   }
