@@ -1,6 +1,6 @@
 import React, { Component, useState } from 'react';
 import { StyleSheet, Text, View, TouchableHighlight, Image, Vibration } from 'react-native';
-import parseTime from '../utils/parseTime';
+import parseTime from '../../utils/parseTime';
 
 const spellIcons = {
   heal: { img: require('../assets/spells/heal.jpg'), countdown: 240 },
